@@ -1,9 +1,36 @@
 body{
-    background-color: #F6EBED;
+    background-color: #EAEBFF;
     font-family: helvetica;
 
 }
-
+table {
+	font-family:Georgia, 'Times New Roman', Times, serif;
+	color:#022954;
+	margin: auto;
+	margin-top: 1.5%;
+	text-align: center;
+border-collapse: collapse;
+height: 100%; }
+ 
+ tbody tr:nth-child(odd) {
+	background-color: #364C7D;
+  }
+  
+  tbody tr:nth-child(even) {
+	background-color: #B0B8CD;
+  }
+table, td, th {
+	border: 2px solid black;
+height: 60px;  }
+ 
+ td {
+	font-family:Arial, Helvetica, sans-serif;
+	color: #07080C;
+ }
+ 
+ th {
+	padding: 0.5%;
+ }
 ul {
     text-align: center;
     list-style: inside;
@@ -18,7 +45,7 @@ ul {
    }
 #seattleSales,#dubaiSales,#limaSales
 {
-    background-color: rgba(165, 42, 42, 0.973);
+    background-color:#022954;
 }
 /* base styles */
 a {
@@ -28,7 +55,7 @@ a {
 
 /* site styles */
 header{
-	background: rgba(165, 42, 42, 0.973);
+	background: #022954;
 	height: 50px;
 }
 
@@ -39,7 +66,7 @@ header{
   .img-container {
     float: left;
     width: 33.33%;
-    padding: 5px;
+	text-align: center;
   }
   
   .clearfix::after {
@@ -85,7 +112,7 @@ header nav li	{
 	margin-top: 25px;
 }
 
-h1 {
+h1,caption {
 	margin-top: 50px;
 	font-size: 40px;
 	font-weight: bold;
@@ -130,7 +157,7 @@ main {
 footer {
 	position:fixed;
 	text-align: center;
-	background: rgba(165, 42, 42, 0.973);
+	background: #022954;
 	height: 25px;
 	bottom:0;
   width:100%;
@@ -155,7 +182,7 @@ footer {
 	padding-bottom: 6px;
 	border: solid 1px black;
 	text-align: center;
-	background-color: rgba(214, 69, 69, 0.973);
+	background-color: #022954;
 	color: white;
 	font-weight: bolder;
   }
@@ -165,7 +192,7 @@ footer {
 	  padding-bottom: 6px;
 	  border: dashed #f2f2f2;
 	  text-align: center;
-	  background-color: rgba(214, 69, 69, 0.973);
+	  background-color: #022954;
 	  color: white;
 	  font-weight: bolder;
   }
@@ -189,11 +216,12 @@ footer {
 		opacity: 0.1;
 		width: 50%;	
 	}
+	.mySlides {display:none;}
 
 	.image {
 		opacity: 1;
 		display: block;
-		width: 100%;
+		width: 70%;
 		height: auto;
 		transition: .5s ease;
 		backface-visibility: hidden;
@@ -219,7 +247,7 @@ footer {
 		opacity: 0;
 		border-radius: 25px;
 		overflow: hidden;
-		background-color: rgba(214, 69, 69, 0.973);
+		background-color:#022954;
 		color: white;
 		font-size: 16px;
 		padding: 16px 32px;
@@ -235,34 +263,13 @@ footer {
 		padding: 0;
 	}
 
-	input[type=text],[type=number], textarea {
-		width: 100%;
-		padding: 12px;
-		border: 1px solid  rgba(224, 155, 155, 0.973);
-		border-radius: 4px;
-		box-sizing: border-box;
-		margin-top: 6px;
-		margin-bottom: 16px;
-		resize: vertical;
-	}
-	
-	input[type=submit] {
-		background-color: rgba(238, 102, 102, 0.973);
-		color: white;
-		padding: 12px 20px;
-		border: none;
-		border-radius: 4px;
-		cursor: pointer;
-	}
-	
-	input[type=submit]:hover {
-		background-color: rgba(214, 69, 69, 0.973);
-	}
+
+
 	
 
 
 	p.desc {
 		padding: 15px;
-		color: brown;
+		color: #022954;
 	}
 	
