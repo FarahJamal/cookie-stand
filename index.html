@@ -6,22 +6,34 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Cookies Stand</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/toggle.css">
 
 </head>
 
 <body>
     <header>
         <section>
-            <img src="https://codefellows.github.io/code-201-guide/curriculum/class-06/lab/assets/salmon.png">       
+          
+
+            <img src="https://codefellows.github.io/code-201-guide/curriculum/class-06/lab/assets/salmon.png">    
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                    
                     <li><a href="pages/sales.html">Sales Information</a></li>
+                    
+                    <label class="switch">
+                        <input id="nightmode"type="checkbox"  >
+                        <span class="slider round"></span>
+                            </label>
+
+
                 </ul>
+
             </nav>
         </section>
     </header>
+
     <h1>The story of Salmon Cookies!</h1>
     <article>
         Cookies appear to have their origins in 7th century AD Persia, shortly after the use of sugar became relatively common in the region. They spread to Europe through the Muslim conquest of Spain. ... The Dutch word "koekje" was Anglicized to "cookie" or cooky.
@@ -35,21 +47,80 @@
         bye bye!    
     </article>
     <br><br><br>
-    
-    
-    <h2 class="w3-center">Some pics to Our Product!</h2>
 
-<div class="w3-content w3-section" style="max-width:500px">
-  <img class="mySlides" src="images/i1.jpg" style="width:100%">
-  <img class="mySlides" src="images/i2.jpg" style="width:100%">
-  <img class="mySlides" src="images/i4.jpg" style="width:100%">
-  <img class="mySlides" src="images/i5.jpg" style="width:100%">
-  <img class="mySlides" src="images/i6.jpg" style="width:100%">
-  <img class="mySlides" src="images/i7.jpg" style="width:100%">
-  <img class="mySlides" src="images/i8.jpg" style="width:100%">
+    <section id="aboutUs">
+      <h1>About Our Family</h1>
+      <p>From our family especially to you, we need you to know that you will be getting cookies made with the best ingredients from our farms from the wheat till the chocolate cause you are from our family! and we wouldn't feed our family anything less! Don't worry about the name it's just a shape! There is nothing smell or taste fishy here! Come on in and see all the amazing things here!</p>
+    </section>
+    <section id="locations">
+      <h1>Locations & Hours</h1>
+          <table style="width: 50%;">
+        <tr>
+          <th>Hours</th>
+          <th>location</th>
+          <th>address</th>
+        </tr>
+        <tr>
+          <td>6am - 7pm</td>
+          <td>Seattle</td>
+          <td>Hangry Panda street</td>
+        </tr>
+        <tr>
+          <td>6am - 7pm</td>
+          <td>Tokyo</td>
+          <td>Ikayaki street</td>
+        </tr>
+        <tr>
+          <td>6am - 7pm</td>
+          <td>Dubai</td>
+          <td>Meena Bazaar street</td>
+        </tr>
+        <tr>
+          <td>6am - 7pm</td>
+          <td>Paris</td>
+          <td>RUE MOUFFETARD street</td>
+        </tr>
+        <tr>
+          <td>6am - 7pm</td>
+          <td>Lima</td>
+          <td>La Lucha Sangucheria street</td>
+        </tr>
+      
+      </table>
+    </section> 
+
+
+    <div id="gen">
+        <h1> Quote of the day!</h1>
+      
+      <div class="container">
+        <p id="sentence"></p>
+      </div>
+    </div>
+
+
+
+    <h1 class="w3-center">Some pics of our products!</h1>
+
+<div class="w3-content w3-section myimg" style="max-width:500px">
+  <img class="mySlides" src="images/chinook.jpg" style="width:100% ">
+  <img class="mySlides" src="images/cutter.jpeg" style="width:100%">
+  <img class="mySlides" src="images/family.jpg" style="width:100%">
+  <img class="mySlides" src="images/fish.jpg" style="width:100%">
+  <img class="mySlides" src="images/frosted-cookie.jpg" style="width:100%">
+  <img class="mySlides" src="images/salmon.png" style="width:100%">
+  <img class="mySlides" src="images/shirt.jpg" style="width:100%">
 
 
 </div>
+<footer>
+    <p>contact us at : +96247851244</p>
+
+    <p>Salmon Cookie Stand<br></p>
+    <a href="mailto:Salmon@cookies.com">Salmon@cookies.com</a>
+  </footer>
   <script src="js/app2.js"></script>  
+
 </body>
+
 </html>
