@@ -9,7 +9,9 @@
     <!-- include a custom google font for hightlights here -->
     <!--include a specified standard sans-serif web font for data (Arial, Verdana, or Helvetica)-->
     <!--include a standard serif web font for text (Georgia, Times, etc)-->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/toggle.css">
+
 </head>
   <body>
     <header>
@@ -20,6 +22,11 @@
                     <li><a href="../index.html">Home</a></li>
                    
                     <li><a href="sales.html">Sales Information</a></li>
+
+                    <label class="switch">
+                      <input id="nightmode"type="checkbox"  >
+                      <span class="slider round"></span>
+                          </label>
                 </ul>
             </nav>
         </section>
@@ -28,29 +35,18 @@
     
 <div id="cookieSale"></div>
 <div id="cookieSale2"></div>
-    <div id="seattleSales">
-      <!-- generate this from js -->
-    </div>
-    <br />
-    <div id="tokyoSales">
-      <!-- generate this from js -->
-    </div>
-    <br />
-    <div id="dubaiSales">
-      <!-- generate this from js -->
-    </div>
-    <br />
-    <div id="parisSales">
-      <!-- generate this from js -->
-    </div>
-    <br />
-    <div id="limaSales">
-      <!-- generate this from js -->
-    </div>  
+  
   </body>
 
   <section id="sales-graph" class="full-width">
     <table id="cookies-sold"></table>
   </section>
+<br><br><br>
+  <footer>
+    <p>contact us at : +96247851244</p>
+
+    <p>Salmon Cookie Stand<br></p>
+    <a href="mailto:Salmon@cookies.com">Salmon@cookies.com</a>
+  </footer>
   <script type="text/javascript" src="../js/app.js"></script>
 </html>
