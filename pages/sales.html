@@ -11,6 +11,8 @@
     <!--include a standard serif web font for text (Georgia, Times, etc)-->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/toggle.css">
+    <link rel="stylesheet" href="../css/contactForm.css">
+
 
 </head>
   <body>
@@ -34,15 +36,32 @@
         </section>
     </header>
 
+
+    <div id="formDiv">
+      <form id="addNewStore">
+        <fieldset>
+        <label for="locationName">Location Name</label>
+        <input type="text" id="locationName" name="locationName" placeholder="Location Name">
+        
+        <label for="minCust"> Minumum customer per hou</label>
+        <input type="number" id="minCust" name="minCust" placeholder="Minumum customer per hour">
+
+        <label for="maxCust">Maximum customer per hour</label>
+        <input type="number" id="maxCust" name="maxCust" placeholder="Maximum customer per hour">
+        <label for="avgCust">Average cookies sold per customer</label>
+        <input type="number" id="avgCust" name="avgCust" step="0.01" placeholder="Average cookies sold per customer">
+    
+      
+        <input type="submit" value="Submit">
+        </fieldset>
+      </form>
+    </div>
     
 <div id="cookieSale"></div>
-<div id="cookieSale2"></div>
   
   </body>
 
-  <section id="sales-graph" class="full-width">
-    <table id="cookies-sold"></table>
-  </section>
+ 
 <br><br><br>
   <footer>
     <p>contact us at : +96247851244</p>
