@@ -1,7 +1,10 @@
 *{
 	box-sizing: border-box;
 }
+div #cookieSale{
+float: right;
 
+}
 body {
 	padding: 25px;
 	background-color: #EAEBFF;

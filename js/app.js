@@ -24,6 +24,9 @@ let allStoresPursPerHour=[];
 let totalByFinalDay=0;
 let trafficPerHour =[0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4, 0.6];
 
+const parentEl=document.getElementById('cookieSale');
+const tableEl=document.createElement('table');
+parentEl.appendChild(tableEl);
 // constructor for the 6 Stores 
 function CookiesShops(store,min,max,avg,operationHours){
 this.store=store;
@@ -35,10 +38,15 @@ this.cookiesperHour=[];
 this.cookiePerDay=0;
 // push the constructor to the array
 totalStrores.push(this);
-
-
-
 }
+
+
+// create new stores
+let seattle = new CookiesShops('Seattle', 23, 65, 6.3, operationHours);
+let tokyo = new CookiesShops('Tokyo', 3, 24, 1.2, operationHours);
+let dubai = new CookiesShops('Dubai', 11, 38, 3.7, operationHours);
+let paris = new CookiesShops('Paris', 20, 38, 2.3, operationHours);
+let lima = new CookiesShops('Lima', 2, 16, 4.6, operationHours);
 console.log(totalStrores);
 //==============================================prototypes section==================================================================\\
 //calculate random value for cookies per hour.
@@ -97,12 +105,12 @@ function totalsDuringDay() {
   }
 
 }
-// create the header for our table. 
+// create the header for our table.
+  
+
+
 function tableHeader() {
-  const parentEl=document.getElementById('cookieSale');
-  const tableEl=document.createElement('table');
   tableEl.setAttribute('width', '80%');
-  parentEl.appendChild(tableEl);
   const tableCaption=document.createElement('caption');
   tableCaption.textContent='Cookies Sales';
   tableEl.appendChild(tableCaption);
@@ -139,13 +147,15 @@ tableBodyEl.setAttribute('id', 'tb');
 
 tableEl.appendChild(tableBodyEl);
 
-}
+}  
+
 // create the footer for the table.
 function tableFooter() {
-  const parentEl=document.getElementById('table');
   const footEl=document.createElement('tfoot');
-  parentEl.setAttribute('id','tf');
-  parentEl.appendChild(footEl);
+
+  //const parentEl=document.getElementById('table');
+  tableEl.setAttribute('id','tf');
+  tableEl.appendChild(footEl);
 
   const tableTrFootEl=document.createElement('tr');
   footEl.appendChild(tableTrFootEl);
@@ -167,32 +177,58 @@ tableTrFootEl.appendChild(totalsFootEl);
 
 
 }
-// create new stores
-let seattle = new CookiesShops('Seattle', 23, 65, 6.3, operationHours);
-let tokyo = new CookiesShops('Tokyo', 3, 24, 1.2, operationHours);
-let dubai = new CookiesShops('Dubai', 11, 38, 3.7, operationHours);
-let paris = new CookiesShops('Paris', 20, 38, 2.3, operationHours);
-let lima = new CookiesShops('Lima', 2, 16, 4.6, operationHours);
-// calling each store with his object.
-tableHeader();
-seattle.setCookiesSoldPerHour();
-seattle.createTableBody();
 
-tokyo.setCookiesSoldPerHour();
-tokyo.createTableBody();
 
-dubai.setCookiesSoldPerHour();
-dubai.createTableBody();
 
-paris.setCookiesSoldPerHour();
-paris.createTableBody();
+/*=========================================================store form function==============================================================*/
 
-lima.setCookiesSoldPerHour();
-lima.createTableBody();
+
+function allShops(){
+  for(let i=0;i<totalStrores.length;i++){
+  totalStrores[i].setCookiesSoldPerHour();
+  totalStrores[i].createTableBody();
+}
+};
+
+
+const addStoreForm =document.getElementById('addNewStore');
+
+addStoreForm.addEventListener('submit',submitForm);
+ 
+function submitForm(event) {
+ event.preventDefault();
+ //console.log(event);
+ let storeName=event.target.locationName.value;
+ let minCust=Number(event.target.minCust.value);
+ let maxCust=Number(event.target.maxCust.value);
+ let avgCust=Number(event.target.avgCust.value);
+ //let workHours=operationHours;
+ //console.log(typeof(maxCust),typeof(minCust),storeName,typeof(avgCust),workHours);
+
+ let newStore=new CookiesShops(storeName,minCust,maxCust,avgCust,operationHours);
+
+newStore.setCookiesSoldPerHour();
+
+tableEl.deleteRow(totalStrores.length);
+newStore.createTableBody();
 totalsDuringDay();
- tableFooter();
+
+tableFooter();
+event.target.reset();
 
 
+}
+
+
+
+
+tableHeader();
+
+allShops();
+totalsDuringDay();
+tableFooter();
+
+/*=============================================dark mode function========================================================================== */
 // toggle to the dark-mode.
 
 var checkbox = document.getElementById("nightmode"); //get the checkbox to a variable
@@ -227,4 +263,6 @@ function nodark() {
   checkbox.checked = false; //set checkbox to be unchecked state
   sessionStorage.setItem("mode", "light"); //store a name & value to know that dark mode is off or light mode is on
 }
+
+
 
