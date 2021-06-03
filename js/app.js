@@ -23,6 +23,7 @@ let totalStrores=[];
 let allStoresPursPerHour=[];
 let totalByFinalDay=0;
 let trafficPerHour =[0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4, 0.6];
+let storeArr=[];
 
 const parentEl=document.getElementById('cookieSale');
 const tableEl=document.createElement('table');
@@ -235,50 +236,58 @@ if(avgCust <= 0){
   return false;
 }
 
-for(i=0; i<totalStrores.length;i++){
-if(storeName.toLowerCase() ==  totalStrores[i].store.toLowerCase()){
-  let newStore=new CookiesShops(storeName,minCust,maxCust,avgCust,operationHours);
-  tableEl.deleteRow(totalStrores.length);
-  tableEl.deleteRow(i+1);
-  newStore.setCookiesSoldPerHour();
+for(var x=0; x<totalStrores.length;x++){
+  console.log(totalStrores.length);
+  console.log(totalStrores[x].store);
 
-  newStore.createTableBody();
-  totalsDuringDay();
-  tableFooter();
-  event.target.reset();
-   totalStrores.splice(i, 1);
-   condition=true;
-   return condition;
+  if(storeName.toLowerCase() ==  totalStrores[x].store.toLowerCase()){
+    console.log(totalStrores[x].store);
+
+    let newStore=new CookiesShops(storeName,minCust,maxCust,avgCust,operationHours);
+    tableEl.deleteRow(totalStrores.length);
+    tableEl.deleteRow(x+1);
+    newStore.setCookiesSoldPerHour();
+  
+    newStore.createTableBody();
+    totalsDuringDay();
+    tableFooter();
+    event.target.reset();
+     totalStrores.splice(x, 1);
+     console.log(totalStrores[x].store);
+condition= false;
+     break;
+  
+  }
+  }
+
+  for(var x=0; x<totalStrores.length;x++){
+
+  if(storeName.toLowerCase() !==  totalStrores[x].store.toLowerCase()){
+    if(condition==false){
+      break;
+    }
+    
+    let newStore=new CookiesShops(storeName,minCust,maxCust,avgCust,operationHours);
+    tableEl.deleteRow(totalStrores.length);
+   newStore.setCookiesSoldPerHour();
+   
+   
+   newStore.createTableBody();
+   totalsDuringDay();
+   
+   tableFooter();
+   event.target.reset();
    break;
+  } 
+  }
+
+    
+  
+  }
 
   
-}
-else if(condition == false){
-return condition;
-break;
-}
   
   
-
-}
-if(condition == false){
-
- let newStore=new CookiesShops(storeName,minCust,maxCust,avgCust,operationHours);
- tableEl.deleteRow(totalStrores.length);
-newStore.setCookiesSoldPerHour();
-
-
-newStore.createTableBody();
-totalsDuringDay();
-
-tableFooter();
-event.target.reset();
-
-}
-
-
-}
-
 tableHeader();
 allShops();
 totalsDuringDay();
