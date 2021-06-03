@@ -51,12 +51,12 @@ function nodark() {
 
 
 var quotes;
-quotes = ['“Today me will live in the moment, unless it’s unpleasant, in which case me will eat a cookie.”',
-'“Life is short, eat cookies for breakfast.”',
-'“When You’re Down and Feeling Worse, Keep a Cookie in Your Purse.”',
-'“Cookies are made of butter and love.”',
-' “If you can’t change the world with chocolate chip cookies, how can you change the world?”',
-' “A balanced diet is a cookie in each hand.”'];
+quotes = ['"Today me will live in the moment, unless it\'s unpleasant, in which case me will eat a cookie."',
+'"Life is short, eat cookies for breakfast."',
+'"When You\'re Down and Feeling Worse, Keep a Cookie in Your Purse."',
+'"Cookies are made of butter and love."',
+' "If you can\'t change the world with chocolate chip cookies, how can you change the world?"',
+' "A balanced diet is a cookie in each hand."'];
 
 
 

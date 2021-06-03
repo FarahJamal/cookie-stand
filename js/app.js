@@ -190,14 +190,15 @@ function allShops(){
 }
 };
 
+console.log(totalStrores.length);
+
 
 const addStoreForm =document.getElementById('addNewStore');
 
 addStoreForm.addEventListener('submit',submitForm);
- 
+ var condition=true;
 function submitForm(event) {
  event.preventDefault();
- //console.log(event);
  let storeName=event.target.locationName.value;
  let minCust=Number(event.target.minCust.value);
  let maxCust=Number(event.target.maxCust.value);
@@ -205,28 +206,84 @@ function submitForm(event) {
  //let workHours=operationHours;
  //console.log(typeof(maxCust),typeof(minCust),storeName,typeof(avgCust),workHours);
 
- let newStore=new CookiesShops(storeName,minCust,maxCust,avgCust,operationHours);
+ if(storeName == ""){
+  alert('you must enter a name');
+  return false;
 
+}
+if(minCust<0){
+
+  alert(`are you serious!${minCust}! \n \r please enter a valid number`);
+
+}
+if(maxCust<0){
+  alert(`are you serious!${maxCust}! \n \r please enter a valid number`);
+
+}
+if(minCust >= maxCust){
+alert('Pay attention min number should be less than max');
+return false;
+}
+if(avgCust == 0){
+  alert('you must enter a valid number');
+  return false;
+}
+if(avgCust <= 0){
+  alert('you must enter a valid number');
+  alert('Average must not be a negative value! ^^');
+
+  return false;
+}
+
+for(i=0; i<totalStrores.length;i++){
+if(storeName.toLowerCase() ==  totalStrores[i].store.toLowerCase()){
+  let newStore=new CookiesShops(storeName,minCust,maxCust,avgCust,operationHours);
+  tableEl.deleteRow(totalStrores.length);
+  tableEl.deleteRow(i+1);
+  newStore.setCookiesSoldPerHour();
+
+  newStore.createTableBody();
+  totalsDuringDay();
+  tableFooter();
+  event.target.reset();
+   totalStrores.splice(i, 1);
+   condition=true;
+   return condition;
+   break;
+
+  
+}
+else if(condition == false){
+return condition;
+break;
+}
+  
+  
+
+}
+if(condition == false){
+
+ let newStore=new CookiesShops(storeName,minCust,maxCust,avgCust,operationHours);
+ tableEl.deleteRow(totalStrores.length);
 newStore.setCookiesSoldPerHour();
 
-tableEl.deleteRow(totalStrores.length);
+
 newStore.createTableBody();
 totalsDuringDay();
 
 tableFooter();
 event.target.reset();
 
-
 }
 
 
-
+}
 
 tableHeader();
-
 allShops();
 totalsDuringDay();
 tableFooter();
+
 
 /*=============================================dark mode function========================================================================== */
 // toggle to the dark-mode.
