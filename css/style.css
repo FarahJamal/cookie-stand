@@ -5,6 +5,10 @@ div #cookieSale{
 float: right;
 
 }
+#h1Font{
+	font-family: 'Zilla Slab Highlight', cursive;
+	color: #364C7D;
+}
 body {
 	padding: 25px;
 	background-color: #EAEBFF;

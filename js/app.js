@@ -237,11 +237,11 @@ if(avgCust <= 0){
 }
 
 for(var x=0; x<totalStrores.length;x++){
-  console.log(totalStrores.length);
-  console.log(totalStrores[x].store);
+  //console.log(totalStrores.length);
+  //console.log(totalStrores[x].store);
 
   if(storeName.toLowerCase() ==  totalStrores[x].store.toLowerCase()){
-    console.log(totalStrores[x].store);
+   // console.log(totalStrores[x].store);
 
     let newStore=new CookiesShops(storeName,minCust,maxCust,avgCust,operationHours);
     tableEl.deleteRow(totalStrores.length);
@@ -253,18 +253,19 @@ for(var x=0; x<totalStrores.length;x++){
     tableFooter();
     event.target.reset();
      totalStrores.splice(x, 1);
-     console.log(totalStrores[x].store);
+     console.log(totalStrores);
+     console.log(totalStrores.length);
+
 condition= false;
-     break;
   
   }
   }
 
-  for(var x=0; x<totalStrores.length;x++){
+  for(var k=0; k<totalStrores.length;k++){
 
-  if(storeName.toLowerCase() !==  totalStrores[x].store.toLowerCase()){
+  if(storeName.toLowerCase() !==  totalStrores[k].store.toLowerCase()){
     if(condition==false){
-      break;
+      continue;
     }
     
     let newStore=new CookiesShops(storeName,minCust,maxCust,avgCust,operationHours);
@@ -277,7 +278,6 @@ condition= false;
    
    tableFooter();
    event.target.reset();
-   break;
   } 
   }
 

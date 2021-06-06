@@ -4,17 +4,18 @@
 # All Stretch Goals for this project has been done
 ## during this project I've learned how to use DOM JS to create dynamic HTML
 ### at this project you'll find the following.
-    - index.html page:
+- index.html page:
         ##### you'll find the following:
         * turn on dark mode or turn off it.
         * animation for the logo.
         * random quotes using JS DOM.
-    - Store.html page
+        * image slider.
+- Store.html page
         ##### you'll find the following:
          * turn on dark mode or turn off it.
         * animation for the logo.
         * contact form
-    - sales.html Page
+- sales.html Page
       ##### you'll find the following:
          * turn on dark mode or turn off it.
         * animation for the logo.
@@ -23,7 +24,7 @@
             - add new location if it doesn't exist.
             - update location data if it's already exsist.
             - calculate the total values.
-    - js folder
+- js folder
         - app.js file
             - creating the table from constructor.
             - update the table.
@@ -31,7 +32,7 @@
         - app2.js file
             - dark mode function.
             - generate the qoute of the day function.
-    - images
+- images
         * contains images.
     
     - css folder for styling stuff
