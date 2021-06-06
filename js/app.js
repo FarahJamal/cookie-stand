@@ -278,6 +278,7 @@ condition= false;
    
    tableFooter();
    event.target.reset();
+   break;
   } 
   }
 
